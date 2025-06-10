@@ -1,4 +1,11 @@
+/*
+  styles.css: 투두리스트 메인 스타일시트
+  - 전체 레이아웃, 폰트, 색상, 버튼, 입력창, 목록 등 UI 스타일 정의
+  - 반응형 레이아웃 포함
+*/
+
 body {
+  /* 배경 그라데이션, 폰트, 정렬 */
   background: linear-gradient(135deg, #a5dee5 0%, #b49be7 40%, #fbc2eb 100%);
   min-height: 100vh;
   display: flex;
@@ -8,6 +15,7 @@ body {
   margin: 0;
 }
 .todo-main {
+  /* 메인 컨테이너: flex로 투두/완료 영역 나란히 */
   display: flex;
   gap: 1.2rem;
   width: 100%;
@@ -17,6 +25,7 @@ body {
   margin-top: 3vh;
 }
 .todo-container {
+  /* 카드형 컨테이너 */
   width: 100%;
   max-width: 600px;
   min-width: 320px;
@@ -32,6 +41,7 @@ body {
   flex-direction: column;
 }
 .todo-title {
+  /* 타이틀 스타일 */
   text-align: center;
   font-size: 2.5rem;
   font-weight: 900;
@@ -46,12 +56,14 @@ body {
   text-shadow: 0 2px 16px #b49be7aa, 0 1px 1px #fff, 0 0 2px #fff, 0 0 1px #b49be7;
 }
 .todo-form {
+  /* 입력 폼: flex, 간격, wrap */
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1.2rem;
   flex-wrap: wrap;
 }
 .todo-input, .todo-priority, .todo-date {
+  /* 입력창, 우선순위, 날짜 공통 스타일 */
   border: 1px solid #d1d5db;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
@@ -62,6 +74,7 @@ body {
   margin-bottom: 0.3rem;
 }
 .todo-input:focus, .todo-priority:focus, .todo-date:focus {
+  /* 포커스 시 테두리 강조 */
   border-color: #b49be7;
   box-shadow: 0 0 0 2px #b49be733;
 }
@@ -72,6 +85,7 @@ body {
   min-width: 120px;
 }
 .todo-add-btn {
+  /* 추가/전체삭제 버튼 스타일 */
   background: linear-gradient(90deg, #a5dee5 0%, #b49be7 100%);
   color: #fff;
   border: none;
@@ -91,6 +105,7 @@ body {
   background: linear-gradient(90deg, #b49be7 0%, #a5dee5 100%);
 }
 #clear-all-btn {
+  /* 전체 삭제 버튼 별도 스타일 */
   display: block;
   width: 100%;
   min-width: 120px;
@@ -113,6 +128,7 @@ body {
   background: linear-gradient(90deg, #b49be7 0%, #a5dee5 100%);
 }
 .todo-counts {
+  /* 할 일/완료 카운트 표시 */
   text-align: right;
   font-size: 0.98rem;
   color: #7c7c9a;
@@ -120,11 +136,13 @@ body {
   padding-right: 0.2rem;
 }
 .todo-list {
+  /* 할 일/완료 목록 ul */
   list-style: none;
   padding: 0;
   margin: 0;
 }
 .todo-item {
+  /* 각 할 일/완료 항목 li */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -141,6 +159,7 @@ body {
   box-sizing: border-box;
 }
 .todo-text {
+  /* 할 일 텍스트 */
   flex: 1 1 120px;
   display: block;
   text-align: left;
@@ -153,11 +172,13 @@ body {
   transition: background 0.2s;
 }
 .todo-text.done {
+  /* 완료된 할 일: 취소선, 색상 */
   text-decoration: line-through;
   color: #b49be7;
   background: #f3eaff;
 }
 .todo-priority-label {
+  /* 우선순위 표시 */
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
@@ -170,18 +191,22 @@ body {
   font-weight: bold;
 }
 .todo-priority-label.high {
+  /* 높음: 보라색 */
   color: #b49be7;
   background: #ede3ff;
 }
 .todo-priority-label.medium {
+  /* 보통: 파랑 */
   color: #5ad1e6;
   background: #e0f7fa;
 }
 .todo-priority-label.low {
+  /* 낮음: 분홍 */
   color: #fbc2eb;
   background: #fff0fa;
 }
 .todo-date-label {
+  /* D-day/완료일 표시 */
   display: inline-block;
   border-radius: 0.7rem;
   padding: 0.18rem 1.2rem;
@@ -194,6 +219,7 @@ body {
   box-shadow: 0 1px 6px 0 #b49be722;
 }
 .todo-btns {
+  /* 버튼 영역(완료/삭제) */
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -201,6 +227,7 @@ body {
   margin-left: 1.2rem;
 }
 .todo-done-btn {
+  /* 완료 버튼 */
   color: #059669;
   background: #e0f7ef;
   border: none;
@@ -220,6 +247,7 @@ body {
   background: #b7f7d8;
 }
 .todo-del-btn {
+  /* 삭제 버튼 */
   color: #ef4444;
   background: #ffeaea;
   border: none;
@@ -238,6 +266,7 @@ body {
   color: #b91c1c;
 }
 @media (max-width: 900px) {
+  /* 태블릿 이하: 세로 배치 */
   .todo-main {
     flex-direction: column;
     gap: 1.5rem;
@@ -249,6 +278,7 @@ body {
   }
 }
 @media (max-width: 500px) {
+  /* 모바일: 패딩/라운드 축소, 폼 세로 배치 */
   .todo-container {
     padding: 1.2rem 0.3rem 1.2rem 0.3rem;
     border-radius: 1.2rem;

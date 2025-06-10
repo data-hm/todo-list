@@ -1,15 +1,23 @@
+<!--
+  index.html: 투두리스트 메인 페이지
+  - 할 일 입력, 우선순위, 날짜, 추가/삭제/완료 기능 UI
+  - app.js에서 동작 제어
+-->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TODO LIST</title>
+  <!-- 메인 스타일시트 연결 -->
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <div class="todo-main">
+    <!-- 할 일 입력/목록 컨테이너 -->
     <div class="todo-container" id="todo-todo-container">
       <h1 class="todo-title">TODO LIST</h1>
+      <!-- 할 일 추가 폼: 텍스트, 우선순위, 날짜 입력 -->
       <form class="todo-form" id="todo-form">
         <input class="todo-input" id="todo-input" type="text" placeholder="할 일을 입력하세요" />
         <select id="priority-input" class="todo-priority">
@@ -20,15 +28,21 @@
         <input class="todo-date" id="date-input" type="date" />
         <button class="todo-add-btn" type="submit">추가</button>
       </form>
+      <!-- 전체 삭제 버튼 (JS에서 동적으로 생성 가능) -->
       <button id="clear-all-btn">전체 삭제</button>
+      <!-- 할 일/완료 카운트 표시 -->
       <div class="todo-counts" id="todo-counts"></div>
+      <!-- 할 일 목록 -->
       <ul class="todo-list" id="todo-list"><li style="visibility:hidden;min-height:3.2rem;"></li></ul>
     </div>
+    <!-- 완료 목록 컨테이너 -->
     <div class="todo-container" id="done-container">
       <h1 class="todo-title" style="font-size:1.7rem;margin-bottom:1.2rem;">완료 목록</h1>
+      <!-- 완료된 할 일 목록 -->
       <ul class="todo-list" id="done-list"></ul>
     </div>
   </div>
+  <!-- 메인 스크립트 연결 -->
   <script src="./app.js"></script>
 </body>
 </html>
