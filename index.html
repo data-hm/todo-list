@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TODO LIST</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="todo-main">
+    <div class="todo-container" id="todo-todo-container">
+      <h1 class="todo-title">TODO LIST</h1>
+      <form class="todo-form" id="todo-form">
+        <input class="todo-input" id="todo-input" type="text" placeholder="할 일을 입력하세요" />
+        <select id="priority-input" class="todo-priority">
+          <option value="보통">보통</option>
+          <option value="높음">높음</option>
+          <option value="낮음">낮음</option>
+        </select>
+        <input class="todo-date" id="date-input" type="date" />
+        <button class="todo-add-btn" type="submit">추가</button>
+      </form>
+      <button id="clear-all-btn">전체 삭제</button>
+      <div class="todo-counts" id="todo-counts"></div>
+      <ul class="todo-list" id="todo-list"><li style="visibility:hidden;min-height:3.2rem;"></li></ul>
+    </div>
+    <div class="todo-container" id="done-container">
+      <h1 class="todo-title" style="font-size:1.7rem;margin-bottom:1.2rem;">완료 목록</h1>
+      <ul class="todo-list" id="done-list"></ul>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
